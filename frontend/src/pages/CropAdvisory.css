@@ -1,0 +1,131 @@
+/* =========================================
+   CROP ADVISORY PAGE STYLING
+   ========================================= */
+
+/* Main Container Animation */
+.page-container {
+  padding: 20px 20px 100px 20px; /* Extra bottom padding for nav bar */
+  max-width: 800px;
+  margin: 0 auto;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Page Title */
+.page-container h1 {
+  font-size: 1.8rem;
+  color: #065f46; /* Dark Emerald */
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+/* --- CROP CARD STYLING --- */
+.crop-item {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.crop-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Header (Name + Badge) */
+.card-header {
+  background: #ecfdf5; /* Very light green */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d1fae5;
+}
+
+.card-header h4 {
+  font-size: 1.2rem;
+  color: #065f46;
+  margin: 0;
+}
+
+/* The "Major Crop" / "Oilseed" Badge */
+.badge {
+  background-color: #059669;
+  color: white;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+/* Card Body */
+.crop-details {
+  padding: 20px;
+}
+
+.crop-details p {
+  margin-bottom: 12px;
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Highlight the labels (Sowing, etc.) */
+.crop-details strong {
+  color: #111827;
+  min-width: 80px; /* Aligns the text nicely */
+}
+
+/* View Schedule Button */
+.secondary-btn {
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #10b981;
+  color: #10b981;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondary-btn:hover {
+  background-color: #10b981;
+  color: white;
+}

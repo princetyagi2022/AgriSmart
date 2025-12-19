@@ -1,0 +1,231 @@
+/* =========================================
+   WEATHER PAGE STYLING
+   ========================================= */
+
+/* Main Container Animation */
+.page-container {
+  padding: 20px 20px 100px 20px;
+  max-width: 600px; /* Keep weather looking like a phone app */
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Back Button (Reused style, ensures consistency) */
+.back-btn {
+  display: inline-flex;
+  text-decoration: none;
+  background: #f3f4f6;
+  color: #4b5563;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+/* --- HERO WEATHER CARD (The Blue Box) --- */
+.weather-large {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); /* Sky Blue Gradient */
+  color: white;
+  padding: 40px 20px;
+  border-radius: 24px;
+  text-align: center;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle cloud effect in background */
+.weather-large::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.weather-large h1 {
+  font-size: 4rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.weather-large p {
+  font-size: 1.1rem;
+  margin-top: 5px;
+  opacity: 0.9;
+}
+
+/* --- ALERT BOX --- */
+.alert-box-red {
+  background-color: #fef2f2;
+  border-left: 5px solid #ef4444; /* Red Stripe */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  color: #991b1b;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.alert-box-red h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.alert-box-red p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* --- FORECAST LIST --- */
+.forecast-list {
+  background: white;
+  border-radius: 16px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.forecast-list div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5px;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 1rem;
+  color: #374151;
+}
+
+/* Remove border from last item */
+.forecast-list div:last-child {
+  border-bottom: none;
+}
+
+/* Day Name */
+.forecast-list span:first-child {
+  font-weight: 600;
+  width: 50px;
+}
+
+/* Temperature Numbers */
+.forecast-list strong {
+  color: #111827;
+}
+
+/* --- New Features Styling --- */
+
+/* 1. Grid inside the Blue Card */
+.weather-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.weather-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.weather-detail span {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.weather-detail strong {
+  font-size: 1.1rem;
+}
+
+/* 2. Farming Advice Box */
+.advice-box {
+  background: #ecfdf5; /* Light Green */
+  border: 1px solid #10b981;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.advice-box h4 {
+  color: #047857;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.advice-box p {
+  font-size: 0.9rem;
+  color: #064e3b;
+  line-height: 1.4;
+}
+
+/* 3. Horizontal Hourly Scroll */
+.hourly-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.hourly-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.hourly-card {
+  min-width: 70px;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.hourly-icon {
+  font-size: 1.5rem;
+}
+
+/* 4. Cleaner Forecast List Items */
+.forecast-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.forecast-item:last-child {
+  border-bottom: none;
+}

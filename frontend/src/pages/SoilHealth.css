@@ -1,0 +1,157 @@
+/* =========================================
+   SOIL HEALTH PAGE STYLING
+   ========================================= */
+
+.page-container {
+  padding: 20px 20px 100px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- MAIN HEALTH CARD --- */
+.health-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+  border: 1px solid #f3f4f6;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.test-date {
+  font-size: 0.85rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+/* Nutrient Grid */
+.nutrient-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.nutrient-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* The Circular Indicator */
+.circle-gauge {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  position: relative;
+  border: 4px solid #e5e7eb;
+}
+
+/* Colors for Status */
+.status-low { border-color: #ef4444; color: #ef4444; background: #fef2f2; }
+.status-ideal { border-color: #10b981; color: #10b981; background: #ecfdf5; }
+.status-high { border-color: #f59e0b; color: #f59e0b; background: #fffbeb; }
+
+.gauge-val {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.gauge-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.nutrient-name {
+  font-size: 0.9rem;
+  color: #374151;
+  font-weight: 600;
+}
+
+.status-text {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* --- CALCULATOR SECTION --- */
+.calculator-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.calc-input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.land-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.calc-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Calculator Result */
+.calc-result {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 15px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #1e3a8a;
+}
+
+.result-row strong {
+  font-size: 1.1rem;
+}
+
+/* Book Test Button */
+.btn-book {
+  width: 100%;
+  background: white;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 25px;
+  cursor: pointer;
+}

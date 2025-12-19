@@ -1,0 +1,163 @@
+/* =========================================
+   GOV SCHEMES PAGE STYLING
+   ========================================= */
+
+.page-container {
+  padding: 20px 20px 100px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: slideUp 0.5s ease-out;
+}
+
+/* --- SEARCH BAR --- */
+.search-box-container {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: border 0.2s;
+}
+
+.search-input:focus {
+  border-color: #ec4899; /* Pink Border */
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+/* --- SCHEME CARD --- */
+.scheme-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.scheme-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-top: 5px solid #ec4899; /* Pink Top Border */
+  transition: transform 0.2s;
+}
+
+.scheme-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.scheme-header {
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 10px;
+}
+
+.scheme-header h3 {
+  color: #831843; /* Dark Pink */
+  font-size: 1.3rem;
+  margin: 0 0 5px 0;
+}
+
+.ministry-badge {
+  background: #fdf2f8;
+  color: #be185d;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.scheme-body p {
+  color: #4b5563;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.scheme-footer {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-apply {
+  background: #be185d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1;
+}
+
+.btn-details {
+  background: white;
+  border: 1px solid #be185d;
+  color: #be185d;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1;
+}
+
+/* Error/Loading */
+.status-msg {
+  text-align: center;
+  color: #6b7280;
+  padding: 20px;
+}
+
+
+/* --- NO RESULTS FOUND --- */
+.no-results {
+  text-align: center;
+  padding: 40px;
+  background: #f9fafb;
+  border-radius: 16px;
+  border: 2px dashed #d1d5db;
+  color: #6b7280;
+  margin-top: 10px;
+}
+
+.no-results h3 {
+  margin: 10px 0 5px 0;
+  color: #374151;
+}
+
+.no-results p {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.clear-btn {
+  background: #ec4899;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.clear-btn:hover {
+  background: #be185d;
+}

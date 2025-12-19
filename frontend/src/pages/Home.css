@@ -1,0 +1,639 @@
+/* =========================================
+   HOME PAGE STYLING (src/pages/Home.css)
+   ========================================= */
+
+/* Main Container Animation */
+.home-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeInPage 0.8s ease-out;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Hero Banner (The Welcome Box) --- */
+.hero-banner {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  padding: 40px 20px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine Animation Effect */
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 100%; }
+  100% { left: 100%; }
+}
+
+.hero-banner h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.hero-banner p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* --- Features Grid Layout --- */
+.features-grid {
+  display: grid;
+  /* Responsive: Auto-fit cards (min 280px wide) */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+/* --- Card Styles --- */
+/* Find this section in your file */
+.link-card {
+  text-decoration: none;  /* <--- ADD THIS LINE */
+  
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0,0,0,0.05);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  color: inherit; /* Ensures text color doesn't turn blue */
+}
+
+/* Hover Effects */
+.link-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Titles */
+.link-card h3 {
+  font-size: 1.4rem;
+  color: #1f2937;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Card Description */
+.link-card p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+/* --- Specific Colors for Cards --- */
+/* Top Border Colors */
+.advisory-card { border-top: 5px solid #10b981; } /* Green */
+.weather-card  { border-top: 5px solid #3b82f6; } /* Blue */
+.soil-card     { border-top: 5px solid #d97706; } /* Brown */
+.pest-card     { border-top: 5px solid #ef4444; } /* Red */
+.market-card   { border-top: 5px solid #8b5cf6; } /* Purple */
+.scheme-card   { border-top: 5px solid #ec4899; } /* Pink */
+
+/* --- Arrow Button inside Card --- */
+.arrow-btn {
+  align-self: flex-end;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  color: #059669; /* Dark Green */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+/* Animate Arrow on Hover */
+.link-card:hover .arrow-btn {
+  background-color: #059669;
+  color: white;
+  transform: translateX(5px);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 600px) {
+  .hero-banner {
+    padding: 30px 15px;
+    border-radius: 15px;
+  }
+
+  .hero-banner h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Force single column on small phones */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .link-card {
+    min-height: 140px;
+    padding: 20px;
+  }
+}
+
+/* --- New Features Styling --- */
+
+/* 1. Urgent Banner (Marquee) */
+.urgent-banner {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #b91c1c;
+  overflow: hidden;
+}
+
+.bell-icon { font-size: 1.2rem; }
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee span {
+  display: inline-block;
+  animation: scrollLeft 15s linear infinite;
+  font-size: 0.9rem;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* 2. Hero Date Badge */
+.date-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  backdrop-filter: blur(4px);
+}
+
+/* 3. Quick Actions Row */
+.quick-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  padding: 0 5px;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  border: 1px solid #f3f4f6;
+}
+
+.action-btn span:last-child {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.action-btn:active .icon-circle {
+  transform: scale(0.9);
+  background: #f0fdf4;
+}
+
+/* 4. Card Internal Tweaks */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.live-temp {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #f3f4f6;
+  border-radius: 3px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.progress-bar div {
+  height: 100%;
+  background: #10b981;
+}
+
+.price-ticker {
+  background: #f3f4f6;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #059669;
+}
+
+/* --- FOOTER STYLING --- */
+.home-footer {
+  margin-top: 40px;
+  padding: 30px 20px 40px 20px; /* Extra bottom padding for navigation bar */
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+}
+
+.footer-section h4 {
+  color: #065f46;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.footer-section p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  font-size: 0.85rem;
+  color: #374151;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.footer-links span {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-links span:hover {
+  color: #10b981;
+}
+
+.footer-contact {
+  background: #ecfdf5;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #10b981;
+}
+
+.footer-contact p {
+  margin: 0;
+  color: #064e3b;
+  font-size: 0.9rem;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* --- QUICK ACTION BUTTONS (News, Scan, Expert, etc.) --- */
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none; /* Removes blue underline */
+  color: #374151;        /* Dark Grey Text */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* The White Circle Container */
+.icon-circle {
+  width: 55px;
+  height: 55px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem; /* Icon Size */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Soft Shadow */
+  border: 1px solid #f3f4f6;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+}
+
+/* The Label Text below the circle */
+.action-btn span:last-child {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+/* --- HOVER EFFECTS --- */
+.action-btn:hover .icon-circle {
+  transform: translateY(-5px) scale(1.1); /* Floats up */
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.25); /* Green Glow */
+  border-color: #10b981;
+  background: #ecfdf5; /* Light Green Bg */
+}
+
+.action-btn:active .icon-circle {
+  transform: scale(0.95); /* Click shrink effect */
+}
+
+
+/* --- NEWS CARD (Grid Version) --- */
+.news-card-grid {
+  
+  border-top: 5px solid #7c3aed; /* Purple Stripe */
+}
+
+.news-card-grid h3 {
+  color: #5b21b6; /* Dark Purple Text */
+}
+
+.news-card-grid p {
+  color: #6d28d9;
+  font-size: 0.9rem;
+}
+
+/* Hover Effect */
+.news-card-grid:hover {
+ 
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.15);
+}
+
+
+/* =========================================
+   FARM ANIMATION STYLES
+   ========================================= */
+
+.farm-scene {
+  position: relative;
+  height: 120px;
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden; /* Keeps tractor inside the box */
+}
+
+/* --- SKY ELEMENTS --- */
+.sky {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+}
+
+.sun {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 2.5rem;
+  animation: spin 10s linear infinite;
+}
+
+.cloud {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+.c1 { top: 10px; left: 10%; animation: float 15s linear infinite; }
+.c2 { top: 20px; left: 60%; animation: float 20s linear infinite reverse; }
+
+/* --- GROUND ELEMENTS --- */
+.ground-elements {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  border-bottom: 4px solid #4ade80; /* Grass Line */
+}
+
+/* Tractor Animation */
+.tractor-container {
+  position: absolute;
+  bottom: 5px;
+  left: -50px; /* Start off-screen */
+  animation: drive 12s linear infinite;
+  z-index: 2;
+}
+
+.tractor {
+  font-size: 2.5rem;
+  transform: scaleX(-1); /* Flip tractor to face right */
+  display: inline-block;
+}
+
+.exhaust {
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  font-size: 1rem;
+  animation: puff 1s ease-out infinite;
+}
+
+/* Crops Growing Animation */
+.crops-row {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 50px;
+}
+
+.crop {
+  font-size: 1.8rem;
+  transform-origin: bottom center;
+  animation: grow 3s ease-in-out infinite alternate;
+}
+
+/* Stagger the crop growth so they don't move together */
+.d1 { animation-delay: 0s; }
+.d2 { animation-delay: 0.5s; }
+.d3 { animation-delay: 1s; }
+.d4 { animation-delay: 1.5s; }
+.d5 { animation-delay: 2s; }
+
+/* =========================================
+   KEYFRAMES (THE MOVEMENT LOGIC)
+   ========================================= */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0% { transform: translateX(0px); }
+  50% { transform: translateX(20px); }
+  100% { transform: translateX(0px); }
+}
+
+@keyframes drive {
+  0% { left: -60px; }
+  100% { left: 100%; } /* Drives all the way across */
+}
+
+@keyframes puff {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(-10px, -10px) scale(2); }
+}
+
+@keyframes grow {
+  0% { transform: scale(0.8); }
+  100% { transform: scale(1.1); }
+}
+
+/* --- SUGAR MILL CARD --- */
+.sugar-card {
+  
+  border-top: 5px solid #d97706; /* Golden Brown (Cane color) */
+}
+
+.sugar-card h3 {
+  color: #92400e; /* Brown Text */
+}
+
+.sugar-card:hover {
+ 
+  box-shadow: 0 10px 20px rgba(217, 119, 6, 0.2);
+  transform: translateY(-5px);
+}
+
+
+
+/* =========================================
+   COLORED SHADOWS FOR HOME CARDS
+   ========================================= */
+
+/* Common Card Transition for smooth popping */
+.link-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 1. ADVISORY CARD (Green/Wheat) */
+.advisory-card {
+  box-shadow: 0 4px 15px rgba(6, 206, 143, 0.15); /* Subtle Gold Shadow */
+}
+.advisory-card:hover {
+  box-shadow: 0 12px 25px rgba(6, 206, 143, 0.3); /* Stronger Gold Glow */
+  transform: translateY(-5px);
+}
+
+/* 2. WEATHER CARD (Blue) */
+.weather-card {
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15); /* Blue Shadow */
+}
+.weather-card:hover {
+  box-shadow: 0 12px 25px rgba(59, 130, 246, 0.3);
+  transform: translateY(-5px);
+}
+
+/* 3. MARKET CARD (Green Money) */
+.market-card {
+  box-shadow: 0 4px 15px rgba(126, 16, 185, 0.15); /* Emerald Shadow */
+}
+.market-card:hover {
+  box-shadow: 0 12px 25px rgba(126, 16, 185, 0.3);
+  transform: translateY(-5px);
+}
+
+/* 4. SUGAR MILL CARD (Yellow/Brown) */
+.sugar-card {
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.15); /* Amber Shadow */
+}
+.sugar-card:hover {
+  box-shadow: 0 12px 25px rgba(217, 119, 6, 0.3);
+  transform: translateY(-5px);
+}
+
+/* 5. SOIL HEALTH CARD (Brown/Earth) */
+.soil-card {
+  box-shadow: 0 4px 15px rgba(161, 98, 7, 0.15); /* Earthy Brown Shadow */
+}
+.soil-card:hover {
+  box-shadow: 0 12px 25px rgba(161, 98, 7, 0.3);
+  transform: translateY(-5px);
+}
+
+/* 6. PEST DETECTION CARD (Red Alert) */
+.pest-card {
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.15); /* Red Shadow */
+}
+.pest-card:hover {
+  box-shadow: 0 12px 25px rgba(239, 68, 68, 0.3);
+  transform: translateY(-5px);
+}
+
+/* 7. GOV SCHEMES CARD (Pink/Magenta) */
+.scheme-card {
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.15); /* Pink Shadow */
+}
+.scheme-card:hover {
+  box-shadow: 0 12px 25px rgba(236, 72, 153, 0.3);
+  transform: translateY(-5px);
+}
+
+/* 8. NEWS CARD (Purple) */
+.news-card-grid {
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.15); /* Purple Shadow */
+}
+.news-card-grid:hover {
+  box-shadow: 0 12px 25px rgba(124, 58, 237, 0.3);
+  transform: translateY(-5px);
+}
